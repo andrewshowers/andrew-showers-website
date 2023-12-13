@@ -1,44 +1,133 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Super Amazing Website</title>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="page2.html">filler</a></li>
-                    <li><a href="portfolio.html">filler2</a></li>
-                    <li><a href="progress.html">progress</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main> 
-            <section>
-                <h1>Welcome to my website!</h1>
-                <p>
-                    It is still under construction, but I would like to use it to track my progress and represent a little bit about myself
-                </p> 
-            </section>
-           <section>
-             <h2>Filler Heading</h2>
-             <p>filler paragraph</p>
-           </section>
-        </main>
-       <footer>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page2.html">filler</a></li>
-                <li><a href="portfolio.html">filler2</a></li>
-                <li><a href="progress.html">progress</a></li>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Super Amazing Website</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overflow: hidden; /* Prevent scrolling */
+      }
+
+      header,
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      nav li {
+        float: left;
+      }
+
+      nav a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .container {
+        display: flex;
+        flex: 1;
+      }
+
+      .sidebar {
+        width: 300px;
+        background-color: #ddd;
+        padding: 20px;
+        position: sticky;
+        top: 0;
+        height: 100%; /* Fill to the footer */
+      }
+
+      .author__avatar img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+
+      main {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto; /* Enable scrolling for the main content */
+      }
+
+      section {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="sidebar">
+        <div itemscope="" itemtype="http://schema.org/Person">
+          <div class="author__avatar">
+            <img
+              src=""
+              class="author__avatar"
+              alt="Andrew Showers"
+            />
+          </div>
+          <div class="author__content">
+            <h3 class="author__name">Andrew Showers</h3>
+          </div>
+          <div class="author__urls-wrapper">
+            <ul class="author__urls social-icons">
+              <li>
+                <a href="https://www.linkedin.com/in/andrew-showers/"
+                  ><i class="linkedin" aria-hidden="true"></i>
+                  LinkedIn</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/andrewshowers"
+                  ><i class="github" aria-hidden="true"></i> Github</a
+                >
+              </li>
             </ul>
-        </nav>
-        <p>Copyright &copy; Andrew Showers</p>
-       </footer>
-    </body>
+          </div>
+        </div>
+      </div>
+      <main>
+        <section>
+          <h1>Welcome to my website!</h1>
+          <p>
+            It is still under construction, but I would like to use it to track my
+            progress and represent a little bit about myself
+          </p>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <p>Copyright &copy; Andrew Showers</p>
+    </footer>
+  </body>
 </html>
