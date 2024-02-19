@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-darkreader-mode="dynamic" data-darkreader-scheme="dark">
+
+<body>
+  <h1 id="intro">Intro</h1>
+  <hr>
+  <p>The media server is set up to be mostly automated, although a number
+    of factors can prevent it from being fully automatic. I do my best to
+    improve this, with the end goal being a server that requires no
+    intervention on my part and minimal maintenance.</p>
+  <h1 id="expectations">Expectations</h1>
+  <hr>
+  <ul>
+    <li>This is just a hobby, not my full time job. The server is
+      available for you to use whenever it’s working. Please let me know if
+      anything isn’t working, as I always want to improve it, but respectfully
+      your movie not working is not my top priority</li>
+    <li>I want this to be a useful resource for you, but please be
+      respectful. I pay for this out of my own pocket (notably storage) so
+      please be mindful</li>
+    <li>Don’t share access to this server with other people. I’m open to adding more users, but please keep me in
+      the loop</li>
+  </ul>
+
+  <h1 id="setup-guide">Setup Guide</h1>
+  <hr>
+  <p>The media server has a lot of different software and services
+    running, so this section will provide you with some info on notable
+    services and help you set them up. I may get a bit technical at times,
+    but I do this so that you have a better understanding of how everything
+    works.</p>
+
+  <h2 id="tailscale">Tailscale</h2>
+  <ul>
+    <li>Tailscale is used to connect whatever device you are watching
+      media on to the media server. The media server is connected, but not
+      exposed to the internet, meaning the only way to access it is via
+      Tailscale</li>
+    <li>Tailscale essentially makes a virtual network that connects
+      devices. This means that even if we are across the world, our devices
+      can see and talk to each other privately (no one else can see our
+      computers talking)</li>
+  </ul>
+
+  <h3 id="setup">Setup</h3>
+  <ol>
+    <li>download Tailscale on your device using https://tailscale.com/download</li>
+    <li>after installing, go to https://login.tailscale.com/admin/machines and create an account, then contact me so I can
+      grant you access. When you do this, remind me to create you an account
+      on Jellyfin as well, and I will respond with your username and password.</li>
+  </ol>
+
+  <h2 id="jellyfin">Jellyfin</h2>
+  <ul>
+    <li>Jellyfin is a media streaming and management software that for all
+      intents and purposes replaces Netflix. It gives the media server a
+      familiar feel, making it easy to organize and stream movies/shows</li>
+  </ul>
+
+  <h3 id="setup-1">Setup</h3>
+  <ol>
+    <li>Download Jellyfin Client (Media Player) using the links below
+      <ol>
+        <li>Windows: https://github.com/jellyfin/jellyfin-media-player/releases (you want
+          “JellyfinMediaPlayer-1.9.1-windows-x64.exe”)</li>
+        <li>iOS: https://apps.apple.com/ca/app/swiftfin/id1604098728</li>
+        <li>MacOS:
+          https://github.com/jellyfin/jellyfin-media-player/releases (I have not
+          tested this software on MacOS, but I believe it should work out of the
+          box. You want “JellyfinMediaPlayer-1.9.1-macos-notarized.dmg”)</li>
+      </ol>
+    </li>
+    <li>Launch your Jellyfin Client (please ensure that Tailscale is both running and connected)</li>
+    <li>In Tailscale (https://login.tailscale.com/admin/machines) find
+      “andyjellyfinserver” and copy the address (should be similar format to
+      “100.xxx.xx.xx” (the x’s will be numbers))</li>
+    <li>Enter the Tailscale address followed by :8096 in the host field (e.g. 100.xxx.xx.xx:8096) and click
+      “Connect”
+      <ol>
+        <li>![[Pasted image 20240214103855.png]]</li>
+        <li>:8096 is the port that Jellyfin runs on, meaning
+          “100.126.93.52” is the address of the entire media server, and :8096 is
+          the specific port that Jellyfin runs through</li>
+      </ol>
+    </li>
+    <li>You should now be on the sign in screen. Enter the Jellyfin username and password I gave you earlier and
+      click “Sign In”
+      <ol>
+        <li>![[Pasted image 20240214104130.png]]</li>
+        <li>If you don’t have an account, reach out to me and I can make you on (it takes like 30 seconds)</li>
+      </ol>
+    </li>
+    <li>You should now be connected! Click on a movie or show, and test it out.
+      <ol>
+        <li>Your screen should look something like this: ![[Pasted image 20240214104522.png]]</li>
+      </ol>
+    </li>
+  </ol>
+
+  <h3 id="notes">Notes</h3>
+  <ul>
+    <li>Using the Jellyfin Client on your device helps to reduce the
+      workload on the media server. Simply put, the client allows the server
+      to send the media file directly/raw, as opposed to changing
+      (transcoding) the file to a different format before sending it.
+      Transcoding put strain on the media server, and using the client allows
+      more people to use the server concurrently</li>
+  </ul>
+
+
+  </div>
+  </main>
+</body>
+
+</html>
